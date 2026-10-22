@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <!-- Meta tag fondamentale per l'adattamento su smartphone -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore BMI</title>
+    <style>
+        /* Reset di base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F1F3F5;
+            color: #1F2328;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 16px; /* Padding ridotto per schermi piccoli */
+        }
+
+        /* Contenitore responsive: largo fino a 360px ma adattabile al 100% dello schermo */
+        .container {
+            width: 100%;
+            max-width: 360px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        /* Box del Form */
+        .box {
+            background-color: #FFFFFF;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        /* Input adatti al touch degli smartphone */
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 12px; /* Area di tocco più comoda su mobile */
+            border: 1px solid #D0D7DE;
+            border-radius: 6px;
+            font-size: 16px; /* 16px previene lo zoom automatico su iOS Safari */
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            border-color: #0969DA;
+            box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
+        }
+
+        /* Pulsante grande ed evidente per dispositivi mobili */
+        .btn {
+            width: 100%;
+            background-color: #1F2328;
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #2c3137;
+        }
+
+        .btn:active {
+            transform: scale(0.99);
+        }
+
+        /* Regole responsive per schermi molto piccoli (es. iPhone SE) */
+        @media (max-width: 380px) {
+            .box {
+                padding: 18px;
+            }
+            h1 {
+                font-size: 20px;
+                margin-bottom: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calcolatore BMI</h1>
+        
+        <form action="bmi.php" method="post" class="box">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required placeholder="Luca" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="peso">Peso (kg)</label>
+                <input type="number" id="peso" name="peso" step="0.1" required placeholder="70">
+            </div>
+
+            <div class="form-group">
+                <label for="altezza">Altezza (cm)</label>
+                <input type="number" id="altezza" name="altezza" step="1" required placeholder="178">
+            </div>
+
+            <button type="submit" class="btn">Calcola</button>
+        </form>
+    </div>
+
+</body>
+</html>
