@@ -1,0 +1,30 @@
+Crea un'applicazione web semplice e responsive (funzionante su PC, Tablet e Smartphone) composta da due pagine:
+
+1. Pagina `form.html`:
+- Titolo h1: "Calcolatore BMI"
+- Form con method="post" e action="bmi.php"
+- Tre campi obbligatori con relative label:
+  * Nome (input text)
+  * Peso in kg (input number, decimali ammessi)
+  * Altezza in cm (input number)
+- Pulsante "Calcola" (larghezza piena, sfondo scuro #1F2328, testo bianco)
+- Layout centrato su sfondo grigio chiaro #F1F3F5, box bianco da max 360px con angoli arrotondati.
+
+2. Pagina `bmi.php`:
+- Legge i dati inviati da form.html.
+- Calcola il BMI con la formula: peso_kg / (altezza_m)^2.
+- Arrotonda il BMI a 2 cifre decimali.
+- Determina la fascia e la classe CSS corrispondente:
+  * BMI < 18,5 -> .sottopeso (Sfondo #E3EEF9, Bordo e testo #2F6FB3)
+  * BMI 18,5 - 24,9 -> .normopeso (Sfondo #E3F4E6, Bordo e testo #256D34)
+  * BMI 25 - 29,9 -> .sovrappeso (Sfondo #FCEBD7, Bordo e testo #9A4F06)
+  * BMI >= 30 -> .obesita (Sfondo #FBE2E2, Bordo e testo #B32D2D)
+- Mostra una card stilizzata con:
+  * Nome utente
+  * Dettagli (Peso X kg · Altezza Y cm)
+  * Valore BMI in grande (es. 22.09)
+  * Nome della fascia in maiuscolo (es. NORMOPESO)
+- Bordo della card di 3px con il colore della fascia.
+- Sotto la card, un link "Calcola di nuovo" verso form.html.
+
+Includi tutto il CSS direttamente nei tag <style> all'interno di ciascun file. fascia (Sottopeso, Normopeso, Sovrappeso o Obesità).
